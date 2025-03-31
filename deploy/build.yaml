@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: app-build
+spec:
+  source:
+    git:
+      uri: https://github.com/example/app-repo.git
+      ref: main
+  strategy:
+    dockerStrategy:
+      dockerfilePath: Dockerfile
+  output:
+    to:
+      kind: ImageStreamTag
+      name: app:latest 
